@@ -99,12 +99,6 @@ export default function Header() {
         </label>
 
         <nav className={s.headerActions} aria-label="User actions">
-          <a href="#" className={s.iconBtn} aria-label="Favoriten">
-            <IconHeart />
-          </a>
-          <Link to="/login" className={s.iconBtn} aria-label="Konto">
-            <IconUser />
-          </Link>
           <Link
             to="/cart"
             className={s.iconBtn}
