@@ -5,7 +5,8 @@ import { useCart } from "../state/cart.jsx";
 export default function ProductCard({ p }) {
   const cart = useCart();
   const id = p.sku ?? p.id; // support either field
-  const img = p.imageUrl || p.image || "https://placehold.co/400x300?text=Image";
+  const img =
+    p.imageUrl || p.image || "https://placehold.co/400x300?text=Image";
 
   return (
     <div className="card">
@@ -13,7 +14,9 @@ export default function ProductCard({ p }) {
         <img
           src={img}
           alt={p.name}
-          onError={(e) => { e.currentTarget.src = "https://placehold.co/400x300?text=No+Image"; }}
+          onError={(e) => {
+            e.currentTarget.src = "https://placehold.co/400x300?text=No+Image";
+          }}
         />
       </Link>
 
@@ -22,7 +25,9 @@ export default function ProductCard({ p }) {
         <p className="price">€ {Number(p.price).toFixed(2)}</p>
         <div className="actions">
           <button onClick={() => cart.add(p)}>Add to cart</button>
-          <Link to={`/product/${encodeURIComponent(id)}`} className="ghost">Details</Link>
+          <Link to={`/product/${encodeURIComponent(id)}`} className="ghost">
+            Details
+          </Link>
         </div>
       </div>
     </div>
