@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import s from "./Header.module.css";
+import { getCategories } from "../api/client";
 
 function IconSearch() {
   return (
@@ -82,6 +83,16 @@ function Logo() {
 export default function Header() {
   const cart = useCart();
 
+  const [categories, setCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchCategories() {
+      const data = await getCategories();
+      setCategories(data);
+    }
+    fetchCategories();
+  }, []);
+
   return (
     <>
       {/* Header */}
@@ -112,24 +123,15 @@ export default function Header() {
 
       {/* Primary navigation */}
       <nav className={s.categoryBar} aria-label="Kategorien">
-        <a href="#" className={s.catItem}>
-          Neu
-        </a>
-        <a href="#" className={s.catItem}>
-          Marken
-        </a>
-        <a href="#" className={s.catItem}>
-          Make-up
-        </a>
-        <a href="#" className={s.catItem}>
-          Pflege &amp; Parfum
-        </a>
-        <a href="#" className={s.catItem}>
-          Haare
-        </a>
-        <a href="#" className={s.catItem}>
-          Sale
-        </a>
+        {categories.map((category) => (
+          <Link
+            key={category.id}
+            to={`/category/${encodeURIComponent(category.id)}`}
+            className={s.catItem}
+          >
+            {category.label}
+          </Link>
+        ))}
       </nav>
     </>
   );
