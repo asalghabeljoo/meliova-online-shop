@@ -1,0 +1,35 @@
+# Ignore build output and cache directories
+shop/backend/build/
+shop/backend/.gradle/
+shop/backend/out/
+
+# Ignore IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore Git
+.git/
+.gitignore
+
+# Ignore logs
+*.log
+
+# Ignore test reports
+shop/backend/build/reports/
+shop/backend/build/test-results/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~

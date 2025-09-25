@@ -1,0 +1,431 @@
+/* CSS Reset - Remove all default browser margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  /* palette tuned to the design */
+  --brand-deep-blue: #0b3f96;
+  --brand-navy: #0d2b6f;
+  --hero-start: #6c87c3;
+  --hero-end: #5a73b1;
+  --light-mint: #f2f8ef;
+  --text: #0c1b2a;
+
+  --circle-1: #c8b8d6;
+  --circle-2: #d9ebbb;
+  --circle-3: #f4eeb7;
+  --circle-4: #f6cfd8;
+
+  --container: 1200px;
+  --radius: 16px;
+}
+
+/* Layout scaffold */
+.page {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+}
+
+.header {
+  max-width: var(--container);
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 280px 1fr 180px;
+  align-items: center;
+  gap: 28px;
+  padding: 0 16px;
+}
+
+/* Logo */
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoSvg {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+}
+
+.logoText {
+  line-height: 1.1;
+}
+
+.brand {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #7b8b86;
+}
+
+/* Search */
+.searchWrap {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-radius: 32px;
+  background: #efefef;
+  box-shadow: inset 0 0 0 1px #e3e3e3;
+  height: 46px;
+}
+
+.searchInput {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0 48px 0 22px;
+  font-size: 16px;
+}
+
+.searchInput::placeholder {
+  color: #a7a7a7;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: #5e6e7e;
+}
+
+/* Header icons */
+.headerActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+}
+
+.iconBtn {
+  color: #0b2a57;
+  text-decoration: none;
+  display: inline-grid;
+  place-items: center;
+}
+
+/* Category bar */
+.categoryBar {
+  position: relative;
+  z-index: 1;
+  background: var(--light-mint);
+  border-top: 1px solid #e9f2e7;
+  border-bottom: 1px solid #e9f2e7;
+  display: flex;
+  gap: 38px;
+  padding: 12px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.categoryBar .catItem {
+  color: #132a19;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.categoryBar .catItem:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--hero-start), var(--hero-end));
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBg::before,
+.heroBg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+}
+
+.heroBg::before {
+  width: 900px;
+  height: 900px;
+  left: -200px;
+  top: -300px;
+}
+
+.heroBg::after {
+  width: 700px;
+  height: 700px;
+  right: -160px;
+  bottom: -260px;
+}
+
+.heroInner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 42px 16px 56px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  min-height: 320px;
+}
+
+.brandChip {
+  position: absolute;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  background: #0f1a33;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.heroLeft {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.bottle {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .3));
+}
+
+.heroCircle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #0f2b63;
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+
+.heroRight {
+  display: flex;
+  justify-content: center;
+}
+
+.heroCard {
+  width: min(420px, 90%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+  font-size: 18px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+/* Aktion section */
+.actionSection {
+  max-width: var(--container);
+  margin: 26px auto 40px;
+  padding: 0 16px;
+}
+
+.actionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.actionHeader h2 {
+  font-size: 28px;
+  color: var(--brand-deep-blue);
+  margin: 0;
+}
+
+.moreLink {
+  font-size: 18px;
+  color: var(--brand-deep-blue);
+  text-decoration: none;
+}
+
+.moreLink:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  margin-left: 6px;
+}
+
+/* Circle grid */
+.circleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.circleCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.circle {
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .05), 0 8px 16px rgba(0, 0, 0, .08);
+}
+
+.c1 {
+  background: var(--circle-1);
+}
+
+.c2 {
+  background: var(--circle-2);
+}
+
+.c3 {
+  background: var(--circle-3);
+}
+
+.c4 {
+  background: var(--circle-4);
+}
+
+.circleLabel {
+  color: #1b3c8e;
+  font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1150px) {
+  .header {
+    grid-template-columns: 220px 1fr 150px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .logoSvg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 14px auto;
+  }
+
+  .logoWrap {
+    justify-content: center;
+  }
+
+  .headerActions {
+    justify-content: center;
+  }
+
+  .categoryBar {
+    gap: 22px;
+    padding: 10px 12px;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    padding: 28px 16px 38px;
+  }
+
+  .heroLeft {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .heroRight {
+    justify-content: center;
+  }
+
+  .brandChip {
+    top: 10px;
+  }
+
+  .circleGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .searchWrap {
+    height: 42px;
+  }
+
+  .bottle {
+    width: 130px;
+  }
+
+  .heroCircle {
+    width: 120px;
+    height: 120px;
+    font-size: 16px;
+  }
+
+  .heroCard {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 180px;
+  }
+
+  .actionHeader h2 {
+    font-size: 24px;
+  }
+}
