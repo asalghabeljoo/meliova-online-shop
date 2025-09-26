@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import s from "./Header.module.css";
 import { getCategories } from "../api/client";
@@ -82,6 +82,7 @@ function Logo() {
 
 export default function Header() {
   const cart = useCart();
+  const location = useLocation();
   const [searchInput, setSearchInput] = React.useState("");
   const [categories, setCategories] = React.useState([]);
 
@@ -92,6 +93,29 @@ export default function Header() {
     }
     fetchCategories();
   }, []);
+
+  const mapedCategories = useMemo(
+    function () {
+      return categories.map((category) => {
+        const currentParams = new URLSearchParams(location.search);
+        let search = "";
+        // If we're on home route, update query params
+        if (location.pathname === "/") {
+          currentParams.set("category", category.id);
+          currentParams.set("page", "0"); // Reset page to 1
+          search = `${currentParams.toString()}`;
+        } else {
+          // If not on home, navigate to home with category
+          search = `category=${encodeURIComponent(category.id)}&page=0`;
+        }
+        return {
+          ...category,
+          url: `/?${search}`,
+        };
+      });
+    },
+    [location.search, categories]
+  );
 
   return (
     <>
@@ -125,11 +149,12 @@ export default function Header() {
 
       {/* Primary navigation */}
       <nav className={s.categoryBar} aria-label="Kategorien">
-        {categories.map((category) => (
+        {mapedCategories.map((category) => (
           <Link
             key={category.id}
-            to={`/category/${encodeURIComponent(category.id)}`}
             className={s.catItem}
+            type="button"
+            to={category.url}
           >
             {category.label}
           </Link>
