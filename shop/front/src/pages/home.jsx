@@ -1,11 +1,19 @@
 import React from "react";
 import s from "./Home.module.css";
-import Header from "../components/Header";
-
+import { getProducts } from "../api/client";
+import ProductCard from "../components/ProductCard";
 export default function Home() {
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => {
+    async function fetchProducts() {
+      const res = await getProducts();
+      const products = res.content; // show only first 6 products
+      setProducts(products);
+    }
+    fetchProducts();
+  }, []);
   return (
     <div className={s.page}>
-
       {/* Hero */}
       <section className={s.hero} aria-label="Highlight">
         <div className={s.heroBg} />
@@ -14,7 +22,8 @@ export default function Home() {
           <div className={s.heroLeft}>
             <div className={s.heroCircle}>
               Geschenk
-              <br />für Dich
+              <br />
+              für Dich
             </div>
           </div>
           <div className={s.heroRight}>
@@ -39,28 +48,12 @@ export default function Home() {
       {/* Aktion circles */}
       <section className={s.actionSection} aria-label="Aktion">
         <div className={s.actionHeader}>
-          <h2>Aktion</h2>
-          <a href="#" className={s.moreLink} aria-label="More">
-            More <span className={s.arrow}>&rarr;</span>
-          </a>
+          <h2>Catalog</h2>
         </div>
         <div className={s.circleGrid}>
-          <div className={s.circleCard}>
-            <div className={`${s.circle} ${s.c1}`} />
-            <div className={s.circleLabel}>lorem ipsum</div>
-          </div>
-          <div className={s.circleCard}>
-            <div className={`${s.circle} ${s.c2}`} />
-            <div className={s.circleLabel}>lorem ipsum</div>
-          </div>
-          <div className={s.circleCard}>
-            <div className={`${s.circle} ${s.c3}`} />
-            <div className={s.circleLabel}>lorem ipsum</div>
-          </div>
-          <div className={s.circleCard}>
-            <div className={`${s.circle} ${s.c4}`} />
-            <div className={s.circleLabel}>lorem ipsum</div>
-          </div>
+          {products.map((product) => (
+            <ProductCard key={product.id} p={product} />
+          ))}
         </div>
       </section>
     </div>
