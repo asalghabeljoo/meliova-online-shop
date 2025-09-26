@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useMemo } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import s from "./Header.module.css";
 import { getCategories } from "../api/client";
@@ -83,6 +83,7 @@ function Logo() {
 export default function Header() {
   const cart = useCart();
   const location = useLocation();
+  const navigate = useNavigate();
   const [searchInput, setSearchInput] = React.useState("");
   const [categories, setCategories] = React.useState([]);
 
@@ -116,6 +117,27 @@ export default function Header() {
     },
     [location.search, categories]
   );
+
+  useEffect(() => {
+    const timeoutId = window.searchTimeoutId ?? null;
+    if (timeoutId != null) {
+      clearTimeout(timeoutId);
+    }
+    window.searchTimeoutId = setTimeout(() => {
+      const currentParams = new URLSearchParams(location.search);
+      let search = "";
+      // If we're on home route, update query params
+      if (location.pathname === "/") {
+        currentParams.set("q", searchInput);
+        currentParams.set("page", "0"); // Reset page to 1
+        search = `${currentParams.toString()}`;
+      } else {
+        // If not on home, navigate to home with category
+        search = `q=${encodeURIComponent(searchInput)}&page=0`;
+      }
+      navigate(`/?${search}`);
+    }, 350);
+  }, [searchInput]);
 
   return (
     <>
