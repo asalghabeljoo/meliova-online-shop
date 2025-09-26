@@ -77,11 +77,11 @@ export default function Home() {
         {loading ? (
           <div className={s.loading}>Loading products...</div>
         ) : (
-        <div className={s.circleGrid}>
-          {products.map((product) => (
-            <ProductCard key={product.id} p={product} />
-          ))}
-        </div>
+          <div className={s.circleGrid}>
+            {products.map((product) => (
+              <ProductCard key={product.id} p={product} />
+            ))}
+          </div>
         )}
       </section>
     </div>
