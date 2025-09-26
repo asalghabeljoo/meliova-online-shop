@@ -191,6 +191,16 @@
     text-align: center;
 }
 
+/* Loading state */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .heroInner {
