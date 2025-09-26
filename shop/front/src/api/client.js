@@ -25,8 +25,8 @@ export function getProductBySku(sku) {
   });
 }
 
-export function getProducts() {
-  return $fetch("/api/products").then((res) => {
+export function getProducts(queryString = "") {
+  return $fetch(`/api/products${queryString}`).then((res) => {
     if (!res.ok) throw new Error("Failed to fetch products");
     return res.json();
   });
