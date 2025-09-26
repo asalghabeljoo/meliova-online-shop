@@ -1,6 +1,6 @@
 // src/components/ProductCard.jsx
 import { Link } from "react-router-dom";
-import { useCart } from "../state/cart.jsx";
+
 
 export default function ProductCard({ p }) {
   const cart = useCart();
