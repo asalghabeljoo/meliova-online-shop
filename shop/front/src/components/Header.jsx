@@ -82,7 +82,7 @@ function Logo() {
 
 export default function Header() {
   const cart = useCart();
-
+  const [searchInput, setSearchInput] = React.useState("");
   const [categories, setCategories] = React.useState([]);
 
   React.useEffect(() => {
@@ -103,6 +103,8 @@ export default function Header() {
             className={s.searchInput}
             placeholder="Wonach suchen Sie?"
             aria-label="Wonach suchen Sie?"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
           <button className={s.searchBtn} aria-label="Suchen">
             <IconSearch />
