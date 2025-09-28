@@ -48,7 +48,7 @@
 .price {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #007bff;
+    color: #6b8e23;
     margin: 0 0 1rem 0;
 }
 
@@ -60,7 +60,7 @@
 
 .actions button {
     flex: 1;
-    background: #007bff;
+    background: #6b8e23;
     color: white;
     border: none;
     border-radius: 8px;
@@ -72,7 +72,7 @@
 }
 
 .actions button:hover {
-    background: #0056b3;
+    background: #5a7a1e;
 }
 
 .actions button:active {
@@ -82,8 +82,8 @@
 .ghost {
     flex: 1;
     background: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
+    color: #6b8e23;
+    border: 2px solid #6b8e23;
     border-radius: 8px;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
@@ -96,7 +96,7 @@
 }
 
 .ghost:hover {
-    background: #007bff;
+    background: #6b8e23;
     color: white;
 }
 

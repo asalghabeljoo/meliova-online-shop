@@ -38,35 +38,13 @@ export default function Home() {
   }, [location.search]);
   return (
     <div className={s.page}>
-      {/* Hero */}
-      <section className={s.hero} aria-label="Highlight">
-        <div className={s.heroBg} />
-        <div className={s.heroInner}>
-          <div className={s.brandChip}>Neutrogena</div>
-          <div className={s.heroLeft}>
-            <div className={s.heroCircle}>
-              Geschenk
-              <br />
-              für Dich
-            </div>
-          </div>
-          <div className={s.heroRight}>
-            <div className={s.heroCard}>
-              <p>
-                hey hey hey hey
-                <br />
-                hey hey
-              </p>
-              <p className={s.mt16}>
-                hey hey heyy&nbsp;&nbsp;hey
-                <br />
-                hey hey hey hey
-                <br />
-                hey
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Banner */}
+      <section className={s.bannerSection} aria-label="Banner">
+        <img
+          src="/img/banner.png"
+          alt="Cosmetic Products Banner"
+          className={s.bannerImage}
+        />
       </section>
 
       {/* Aktion circles */}

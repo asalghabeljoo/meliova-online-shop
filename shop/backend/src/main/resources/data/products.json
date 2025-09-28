@@ -24,7 +24,7 @@
         "category": "Hair",
         "brand": "L'ORÉAL PARiS ELVITAL",
         "shortDetail": "Pflegendes Shampoo mit Grapefruit-, Jasmin- und Zedernholzduft. Feuchtigkeitsspendende Formel für strahlenden Glanz und geschmeidiges Haar.",
-        "image": "https://via.placeholder.com/800x600?text=Shampoo"
+        "image": "/img/shampoo-elvital.png"
     },
     {
         "_id": "HR-TON-ROS01",
@@ -42,7 +42,7 @@
         "category": "Makeup",
         "brand": "CATRICE",
         "shortDetail": "Lidschatten-Palette mit 8 hochpigmentierten Farben in verschiedenen Finishes. Samtig-weiche Textur für einfaches Auftragen, Verblenden und intensive Farbabgabe.",
-        "image": "https://via.placeholder.com/800x600?text=Eyeshadow+Palette"
+        "image": "/img/lidschatten-palette.png"
     },
     {
         "_id": "MU-EYES-CITY01",
@@ -51,7 +51,7 @@
         "category": "Makeup",
         "brand": "MAYBELLINE NEW YORK",
         "shortDetail": "Kompakte Lidschatten-Palette mit 6 perfekt abgestimmten Nuancen. Pudrig-cremige Konsistenz für leichtes Auftragen, Verblenden und vielseitige Looks – von schimmernd bis matt.",
-        "image": "https://via.placeholder.com/800x600?text=Mini+Eyeshadow+Palette"
+        "image": "/img/lidschatten-maybelline.png"
     },
     {
         "_id": "MU-MASC-LWL01",
@@ -60,7 +60,7 @@
         "category": "Makeup",
         "brand": "essence",
         "shortDetail": "Wasserfeste Mascara für Länge und Volumen. Flexible Bürste erfasst jede Wimper für präzises Auftragen und langanhaltenden Halt – ideal für definierte Looks.",
-        "image": "https://via.placeholder.com/800x600?text=Mascara"
+        "image": "/img/mascara-essence.png"
     },
     {
         "_id": "MU-FOUND-SSL01",
@@ -69,7 +69,7 @@
         "category": "Makeup",
         "brand": "MAYBELLINE NEW YORK",
         "shortDetail": "Foundation im Nude-Look für mittlere bis vollständige Abdeckung. Angereichert mit Aminosäuren, ölfrei, färbt nicht ab und sorgt für ein mattes, langanhaltendes Finish.",
-        "image": "https://via.placeholder.com/800x600?text=Foundation"
+        "image": "/img/foundation-maybelline.png"
     },
     {
         "_id": "MU-MASC-FALSE01",
@@ -78,7 +78,7 @@
         "category": "Makeup",
         "brand": "MAYBELLINE NEW YORK",
         "shortDetail": "Wasserfeste Mascara in Schwarz mit innovativer Helix-Bürste. Verleiht bis zu 36 % längere Wimpern, sorgt für Volumen ohne Klumpen oder Verschmieren. Geeignet für empfindliche Augen und Kontaktlinsenträger.",
-        "image": "https://via.placeholder.com/800x600?text=Falsies+Mascara"
+        "image": "/img/mascara-maybelline.png"
     },
     {
         "_id": "SC-WASH-ULS01",
@@ -87,7 +87,7 @@
         "category": "Skin care",
         "brand": "Balea",
         "shortDetail": "Sanftes Waschgel für empfindliche Haut. Entfernt Schmutz und Make-up, unterstützt die Mikrobiom Balance, ohne Parfum, Parabene oder Farbstoffe. Mit Panthenol und Bisabolol für ein angenehmes Hautgefühl.",
-        "image": "https://via.placeholder.com/800x600?text=Face+Wash"
+        "image": "/img/waschgel-balea.png"
     },
     {
         "_id": "SC-SERUM-VC01",
@@ -96,7 +96,7 @@
         "category": "Skin care",
         "brand": "Balea",
         "shortDetail": "Vitamin-C-Serum mit antioxidativer Wirkung. Schützt vor Umwelteinflüssen, spendet Feuchtigkeit, glättet feine Linien und sorgt für ein ebenmäßiges, strahlendes Hautbild.",
-        "image": "https://via.placeholder.com/800x600?text=Vitamin+C+Serum"
+        "image": "/img/vitaminc.png"
     },
     {
         "_id": "SC-LIP-ROSY01",
@@ -105,7 +105,7 @@
         "category": "Skin care",
         "brand": "Vaseline",
         "shortDetail": "Lippenbalsam mit Rosenduft, spendet bis zu 72 Stunden Feuchtigkeit. Im praktischen Mini-Format, sorgt für zarte Lippen mit leichter Tönung.",
-        "image": "https://via.placeholder.com/800x600?text=Lip+Care"
+        "image": "/img/lippvaseline.png"
     },
     {
         "_id": "HL-TOOTH-PAR01",
@@ -114,7 +114,7 @@
         "category": "Health",
         "brand": "meridol",
         "shortDetail": "Zahnpasta mit innovativer antibakterieller Formel. Stärkt das Zahnfleisch, wirkt gegen Parodontitis und bietet einen indirekt entzündungshemmenden Effekt.",
-        "image": "https://via.placeholder.com/800x600?text=Toothpaste"
+        "image": "/img/zahnpasta-meridol.png"
     },
     {
         "_id": "HL-MAG-40001",
@@ -123,7 +123,7 @@
         "category": "Health",
         "brand": "Mivolis",
         "shortDetail": "Magnesiumpräparat mit 400 mg zur Unterstützung der normalen Muskel- und Nervenfunktion. Trägt zum Energiestoffwechsel bei, ideal für sportlich Aktive.",
-        "image": "https://via.placeholder.com/800x600?text=Magnesium"
+        "image": "/img/magnesium.png"
     },
     {
         "_id": "HL-SUPP-OMD01",
@@ -132,6 +132,6 @@
         "category": "Health",
         "brand": "Doppelherz",
         "shortDetail": "Nahrungsergänzungsmittel für Kinder mit Omega-3 und Vitamin D3. Unterstützt Immunsystem und Knochenwachstum, fruchtiger Geschmack nach Erdbeer und Citrus.",
-        "image": "https://via.placeholder.com/800x600?text=Omega3+Kids"
+        "image": "/img/omega3.png"
     }
 ]

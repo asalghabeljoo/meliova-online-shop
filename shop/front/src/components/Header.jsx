@@ -147,12 +147,12 @@ export default function Header() {
         <label className={s.searchWrap} aria-label="Site search">
           <input
             className={s.searchInput}
-            placeholder="Wonach suchen Sie?"
-            aria-label="Wonach suchen Sie?"
+            placeholder="What are you looking for?"
+            aria-label="What are you looking for?"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button className={s.searchBtn} aria-label="Suchen">
+          <button className={s.searchBtn} aria-label="Search">
             <IconSearch />
           </button>
         </label>

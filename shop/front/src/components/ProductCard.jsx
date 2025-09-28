@@ -11,7 +11,7 @@ export default function ProductCard({ p }) {
 
   return (
     <div className={styles.card}>
-      <Link to={`/product/${encodeURIComponent(id)}`}>
+      <Link to={`/p/${encodeURIComponent(id)}`}>
         <img
           src={img}
           alt={p.name}
@@ -26,10 +26,7 @@ export default function ProductCard({ p }) {
         <p className={styles.price}>€ {Number(p.price).toFixed(2)}</p>
         <div className={styles.actions}>
           <button onClick={() => cart.add(p)}>Add to cart</button>
-          <Link
-            to={`/product/${encodeURIComponent(id)}`}
-            className={styles.ghost}
-          >
+          <Link to={`/p/${encodeURIComponent(id)}`} className={styles.ghost}>
             Details
           </Link>
         </div>
